@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <title>Spotrs Center</title>
+ <link rel="stylesheet" type="text/css" href="/assets/styles/style.css">
+
+</head>
+<body>
+  <%- include('partials/header.ejs') %>
+  <%- include('partials/nav.ejs') %>
+<form method="POST" action = '/newconnection'>
+
+  <div class="f">
+
+    <%
+      if(errors){
+      errors.forEach(function(data){%>
+          <div style="padding-left: 100px; color: black"><%=data.msg %></div><br>
+          <%});
+        } %>
+
+
+    <label class="f1" style="padding-right: 57px"><b>Event</b></label>
+    <input type="text" class= "f2" placeholder="name" name="event" required><br>
+
+    <label class="f1" style="padding-right:28px"><b>Company</b></label>
+    <input type="text" class= "f2" placeholder="name" name="company" required><br>
+
+    <label class="f1" style="padding-right:30px"><b>Category</b></label>
+    <input type="text" class= "f2" placeholder="name" name="categoryName" required><br>
+
+    <label class="f1" style="padding-right: 45px"><b>Details</b></label>
+    <input  type="text" class= "f2" style="padding-bottom: 80px" placeholder="description" name="details" required><br>
+
+    <label class="f1" style="padding-right: 48px"><b>Where</b></label>
+    <input type="text" class= "f2" placeholder="location" name="where" required><br>
+
+    <label class="f1" style="padding-right: 50px"><b>When</b></label>
+    <input type="text" class= "f2" placeholder="when" name="when" required><br>
+    <button onclick="window.location.href='/newconnections'" style="margin: 20px; margin-left: 430px; background-color:black;color:white;border:none;width:150px; height:26px">Create Connection</button>
+
+
+  </div>
+
+</form>
+
+<%- include('partials/footer.ejs') %>
+</body>
+</html>

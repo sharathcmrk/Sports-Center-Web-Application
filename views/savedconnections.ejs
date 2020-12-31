@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <title>Spotrs Center</title>
+ <link rel="stylesheet" type="text/css" href="/assets/styles/style.css">
+
+</head>
+
+<body>
+  <%- include('partials/header.ejs') %>
+  <%- include('partials/nav.ejs') %>
+	<article>
+
+            <h2 class="p1">Event Registration</h2><br>
+
+	<div class="n6">
+    <% if(connectionsExist) { %>
+        <table class="t3">
+
+               <tr>
+                <th class="t4">Company</th>
+                <th class="t4">Category</th>
+                <th class="t4">Register</th>
+                <th></th>
+               </tr>
+
+              <% data.forEach(function(Userconn){ %>
+               <tr>
+                <td class="t4"><%= Userconn._event %> </td>
+                <td class="t4"><%= Userconn._category %></td>
+                <td class="t4"><%= Userconn._rsvp %></td>
+                <td class="t4">
+            <div class="n10">
+
+
+            <form method="get" action='/connection/<%= Userconn._Uid %>'>
+            <input type='submit' value='Update' name='button' style="background-color:black;color:white;border:none;width:75px; height:22px"/>
+            <input type="hidden" value="<%= Userconn._Uid %>" name="Uid" />
+            </form>
+             <form method="post" action='/savedconnections'>
+             <input type='submit' value='Delete' name='button' style="background-color:black;color:white;border:none;width:75px; height:22px"/>
+             <input type="hidden" value="delete" name="actionOp" />
+             <input type="hidden" value="<%= Userconn._Uid %>" name="Uid" />
+             <input type="hidden" value="<%= Userconn._event %>" name="event" />
+             <input type="hidden" value="<%= Userconn._category %>" name="categoryName" />
+
+           </form>
+         </div>
+       </td>
+               </tr>
+            <% }); %>
+
+
+        </table>
+        <% } else { %>
+          <h2 style = "padding-left: 580px">There are no events registered.</h2>
+        <% } %>
+      </div>
+  </article>
+
+
+	<%- include('partials/footer.ejs') %>
+</body>
+</html>

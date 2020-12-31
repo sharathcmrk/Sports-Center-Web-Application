@@ -1,0 +1,17 @@
+<nav class="n1">
+    <ul>
+
+      <% if(loggedIn){%><li ><a href="/connections" style="text-decoration: none;color: white;">Event Registration </a></li>
+      <li style="padding-right:649px;"><%= Name %>  </li>
+      <li><a href="/savedconnections" style="text-decoration: none; color: white;">Myconnections</a></li>
+      <li><a href="/signout" style="text-decoration: none; color: white;">Sign Out</a></li>
+      <li><a href="/newconnection" style="text-decoration: none; color: white;">New Connection</a></li>
+      <%} else { %>
+      <li style="padding-right: 889px;"><a href="/connections" style="text-decoration: none;color: white;">Event Registration </a></li>
+      <li><a href="/login" style="text-decoration: none; color: white;">Login</a></li>
+      <li><a href="/login" style="text-decoration: none; color: white;">Sign In</a></li>
+      <li><a href="/newconnection" style="text-decoration: none; color: white;">New Connection</a></li><% } %>
+
+
+    </ul>
+  </nav>

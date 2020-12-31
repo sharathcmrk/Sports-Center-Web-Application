@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <title>Spotrs Center</title>
+ <link rel="stylesheet" type="text/css" href="/assets/styles/style.css">
+
+</head>
+
+<body>
+  <%- include('partials/header.ejs') %>
+  <%- include('partials/nav.ejs') %>
+
+	<article>
+
+	<div class="n3">
+        <img src= "<%= data.imageURL %>" alt="" width="190" height="150"><br><br>
+        <h3><%= data.event %></h3>
+        <h4>Hosted by: <%= data.host %></h4>
+        <h4>Sport: <%= data.categoryName %></h4>
+        <h4>Company: <%= data.company %></h4>
+        <h4>Day: <%= data.when %></h4>
+        <h4>Timings: <%= data.time %></h4>
+        <h4>Loaction: <%= data.where %></h4>
+        <h4> Details: <%= data.details %></h4>
+
+
+    </div>
+    </article>
+    <div class="n5">
+        <table class="t1">
+            <tr>
+            <th class="t2">Are you Interested in Registering for this Event?</th>
+        </tr>
+            <tr>
+                <td>
+            <% if(loggedIn) { %>
+              <div class="n9">
+             <form method="post" action='/savedconnections'>
+             <input type='submit' value='Yes' name='button' style="background-color:green;color:white;border:none;width:75px; height:30px"/>
+             <input type="hidden" value="add" name="actionOp" />
+             <input type="hidden" value="<%= Uid %>" name="Uid" />
+             <input type="hidden" value="<%= data.event %>" name="event" />
+             <input type="hidden" value="<%= data.categoryName %>" name="categoryName" />
+             </form>
+               <form method="post" action='/savedconnections'>
+               <input type='submit' value='No' name='button' style="background-color:red;color:white;border:none;width:75px; height:30px"/>
+               <input type="hidden" value="add" name="actionOp" />
+               <input type="hidden" value="<%= Uid %>" name="Uid" />
+               <input type="hidden" value="<%= data.event %>" name="event" />
+               <input type="hidden" value="<%= data.categoryName %>" name="categoryName" />
+             </form>
+            <form method="post" action='/savedconnections'>
+               <input type='submit' value='Maybe' name='button' style="background-color:skyblue;color:white;border:none;width:75px; height:30px"/>
+               <input type="hidden" value="add" name="actionOp" />
+               <input type="hidden" value="<%= Uid %>" name="Uid" />
+               <input type="hidden" value="<%= data.event %>" name="event" />
+               <input type="hidden" value="<%= data.categoryName %>" name="categoryName" />
+             </form>
+             </div>
+             <%} else { %>
+
+             <button onclick="window.location.href='/login'" style="background-color:green;color:white;border:none;width:75px; height:30px">Yes</button>
+             <button onclick="window.location.href='/login'" style="background-color:red;color:white;border:none;width:75px; height:30px">No</button>
+             <button onclick="window.location.href='/login'" style="background-color:skyblue;color:white;border:none;width:75px; height:30px">Maybe</button>
+             <% } %>
+           </td>
+            </tr>
+
+        </table>
+        </div>
+<%- include('partials/footer.ejs') %>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <title>Spotrs Center</title>
+ <link rel="stylesheet" type="text/css" href="/assets/styles/style.css">
+
+</head>
+
+<body>
+    <%- include('partials/header.ejs') %>
+    <%- include('partials/nav.ejs') %>
+	<article>
+          <div class="p1">
+            <h2>Welcome to Sports Center Event!</h2><br>
+            <h2>All the details about Sports Equipment you ever need at one place</h2><br>
+      <h2>Top Brands and Executives from all ove the World are here!</h2><br><br>
+      </div>
+	<nav class="n2">
+
+        <div class="row">
+            <div class="column">
+              <a href="/connections" style="text-decoration: none;color:white;"><img src="/assets/images/adidasboots.jpg" alt="Football" width="600" height="350"></a><br><br><h2>Soccer</h2>
+            </div>
+            <div class="column">
+              <a href="/connections" style="text-decoration: none;color: white;"><img src="/assets/images/cricket1.jpg" alt="cricket" width="600" height="350"></a><br><br><h2>Cricket</h2>
+
+            </div>
+            <div class="column">
+              <a href="/connections" style="text-decoration: none;color:white;"><img src="/assets/images/tennis.jpg" alt="Tennis" width= "600" height="350"></a><br><br><h2>Tennis</h2>
+
+            </div>
+            <div class="column">
+              <a href="/connections" style="text-decoration: none;color: white;"><img src="/assets/images/basketball.jpg" alt="cricket" width="600" height="350"></a><br><br><h2>Basketball</h2>
+
+              </div>
+          </div>
+
+        </nav>
+  </article>
+	<%- include('partials/footer.ejs') %>
+</body>
+</html>

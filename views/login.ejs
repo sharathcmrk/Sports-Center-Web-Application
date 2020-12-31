@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <title>Spotrs Center</title>
+ <link rel="stylesheet" type="text/css" href="/assets/styles/style.css">
+
+</head>
+<body>
+  <%- include('partials/header.ejs') %>
+  <%- include('partials/nav.ejs') %>
+<h1  style="text-align: center; background-color: white; padding-top: 100px">Login to continue</h1>
+<form class ="n8" id = "Login_page" method= 'POST' action='/login'>
+
+
+        <div style="color: black"><%=errors %></div>
+
+        <div style="color: black"><%=crederr %></div><br>
+
+  <label>username</label>
+  <input type= "text" name= "username"><br><br>
+  <label>password</label>
+  <input type= "password" name= "password"><br><br>
+
+  <div style = "padding-left: 150px">
+  <input class= "s" type= "submit" value="Login">
+  </div>
+</form>
+<%- include('partials/footer.ejs') %>
+</body>
+</html>

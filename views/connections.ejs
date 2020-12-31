@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <title>Spotrs Center</title>
+ <link rel="stylesheet" type="text/css" href="/assets/styles/style.css">
+
+</head>
+
+<body>
+    <%- include('partials/header.ejs') %>
+    <%- include('partials/nav.ejs') %>
+
+    <article>
+          <header class="p1">
+            <h2>You can get a chance to meet your favourite Super Star!</h2><br>
+            <h2>Meet Top Executives, Agents and know more about their Brand</h2><br><br>
+  
+          </header>
+	<aside class="n7">
+    <% category.forEach(function(cat){ %><br>
+       <h2><%= cat %></h2>
+         <% data.forEach(function(connection){
+                 if(cat == connection.categoryName){ %><br>
+                   <p><a href="/connection/<%= connection.connectionID %>" style="text-decoration: none; color: #147785fb; font-variant: normal; font-size: 20px;" ><%= connection.company %></a></p>
+             <%}
+          });
+      }); %>
+            </aside>
+          </article>
+
+
+	<%- include('partials/footer.ejs') %>
+</body>
+</html>
