@@ -10,7 +10,7 @@ app.use('/assets', express.static('assets'));
 app.use('/partials', express.static('partials'));
 app.use(cookieparser());
 app.use(session({
-    secret: 'Milestone5',
+    secret: 'secret',
     proxy: true,
     resave: true,
     saveUninitialized: true
